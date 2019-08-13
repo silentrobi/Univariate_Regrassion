@@ -1,0 +1,9 @@
+++++++++ISSUE 1+++++++++
+To download files from PowerShell:
+1. first set security protocol:
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+2. second download the file using url
+Invoke-WebRequest -Uri <http url> -OutFile "<directory/giveANameToTheFile>"
+Example:Invoke-WebRequest -Uri https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv -OutFile "C:\Downlaods\FuelConsumption.csv"
+
